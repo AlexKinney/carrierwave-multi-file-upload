@@ -1,0 +1,21 @@
+<h2> Sample App: CarrierWave Multiple File Upload<h2>
+</br>	
+</br>
+</br>
+<h4> This app demonstrates an example of how to use the CarrierWave gem to facilitate multiple file uploads. This is a Rails 3.2.3 application that uses Ruby 1.9.3 and was developed on Mac Lion OS X.  
+</h4>
+</br>	
+<h4>CarrierWave is easy to set up and by default allows just one file to be uploaded at a time. To upload more than one file at a time, I've made use of the Jquery-File-Upload plugin. This plugin expects a json response and uses AJAX to update the page with the upload results: thumbnails. To facilitate the creation of a json response, I use the Jbuilder gem.
+</h4>
+</br>
+<h4> The example here has two models, Gallery and Photos. Gallery has many Photos. Photo belongs to Gallery. Since these two models are nested, I took the nested resources approach. See config.rb and start researching nested resources if you're interested. </h4>
+</br>
+<h4>Since we're uploading image files, we'll want to use a gem called MiniMagick which is a Ruby wrapper for ImageMagick. What is ImageMagick and why do you care? Here is the link to get you started: 
+<%=link_to "All-Things-ImageMagick", 'http://www.imagemagick.org/script/index.php' %>. Try using <%=link_to "HomeBrew", 'http://mxcl.github.com/homebrew/' %> to install ImageMagick: brew install imagemagick [<--type this in terminal].
+</h4>
+</br>
+<h4>One side note regarding Carrierwave: when photos are deleted, the corresponding file folders become empty, but are not removed. This is a Carrierwave "feature", and work-arounds can be found online. Paperclip, another popular upload gem cleans up its folders nicely and is easy to use as well. My anecdotal evidence leans toward Paperclip being faster.
+</h4> 
+</br>
+<h4> To see how this demo app works, you must first add a Gallery. So let's go to the
+	<%=link_to "Gallery Page", galleries_path %>.</h4>
